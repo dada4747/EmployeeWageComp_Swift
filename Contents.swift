@@ -6,12 +6,14 @@ var empHrs : Int = 0
 var empWage : Int = 0
 var empCheck = Int.random(in: 0...2)
 
-if empCheck == IS_PART_TIME {
-   empHrs = 4    
-}else if empCheck == IS_FULL_TIME {
+switch empCheck {
+case IS_PART_TIME:
+    empHrs = 4
+case IS_FULL_TIME:
     empHrs = 8
-}else {
+default:
     empHrs = 0
 }
+
 empWage = WAGE_PER_HR * empHrs
 print("Employee Wage is : \(empWage)")
